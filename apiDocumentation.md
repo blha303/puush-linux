@@ -6,7 +6,7 @@ puush API documentation
  - Request:
  - - e = email address
  - - p = password
- - Response (authenticated, success): `{premium},{apikey},[expire],{size-sum}
+ - Response (authenticated, success): `{premium},{apikey},[expire],{size-sum}`
  - Response (failure): `-1`
 
 ###Deletion
