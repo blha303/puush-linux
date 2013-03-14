@@ -2,7 +2,7 @@ puush API documentation
 -----------------------
 
 ###Authentication
- - URL: /api/auth
+ - URL: `/api/auth`
  - Request:
  - - e = email address
  - - p = password
@@ -10,7 +10,7 @@ puush API documentation
  - Response (failure): `-1`
 
 ###Deletion
- - URL: /api/hist
+ - URL: `/api/hist`
  - Request:
  - - k = apikey
  - - i = file identifier - on puush.me, is base10 of file hash
@@ -18,14 +18,14 @@ puush API documentation
  - Response (failure): `-1`
 
 ###History
- - URL: /api/hist
+ - URL: `/api/hist`
  - Request:
  - - k = apikey
  - Response (history, success): `{id},{YYYY-MM-DD HH:MM:SS},{url},{filename},{views},{unknown}`
  - Response (failure): `-1`
 
 ###Thumbnail
- - URL: /api/thumb
+ - URL: `/api/thumb`
  - Request:
  - - k = apikey
  - - i = file identifier - on puush.me, is base10 of file hash
@@ -33,7 +33,7 @@ puush API documentation
  - Response (failure): `-1`
 
 ###Upload
- - URL: /api/up
+ - URL: `/api/up`
  - Request:
  - - k = apikey
  - - z = "poop"
