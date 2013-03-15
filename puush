@@ -8,6 +8,7 @@ fi
 OIFS=$IFS
 IFS=','
 temp=0
+mimetype="file -b --mime-type $1"
 
 curl "https://puush.me/api/up" -F "k=$PUUSH_API_KEY" -F "z=poop" -F "f=@$1" -o puushtmp
 
