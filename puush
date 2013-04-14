@@ -23,5 +23,6 @@ do
     (( temp += 1 ))
 done
 
+rm puushtmp
 
 IFS=$OIFS
