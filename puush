@@ -1,28 +1,15 @@
 #!/bin/bash
 
+PUUSH_API_KEY=""
+
 if [ -z "$PUUSH_API_KEY" ]
-  then
-    echo "Set the variable PUUSH_API_KEY with 'export PUUSH_API_KEY=\"apiKeyHere\""
-    exit
+then
+  echo "Set the variable PUUSH_API_KEY in $0 or with 'export PUUSH_API_KEY=\"apiKeyHere\""
+  exit
+elif ! [ -r "$1" ]
+then
+  echo "Specify a file to be uploaded"
+  exit
 fi
-OIFS=$IFS
-IFS=','
-temp=0
-mimetype="file -b --mime-type $1"
 
-curl "https://puush.me/api/up" -F "k=$PUUSH_API_KEY" -F "z=poop" -F "f=@$1" -o puushtmp
-
-IN=$(cat puushtmp)
-
-for x in $IN
-do
-    if [[ $temp = 1 ]]
-      then
-        echo $x
-    fi
-    (( temp += 1 ))
-done
-
-rm puushtmp
-
-IFS=$OIFS
+curl "https://puush.me/api/up" -# -F "k=$PUUSH_API_KEY" -F "z=poop" -F "f=@$1" | sed -E 's/^.+,(.+),.+,.+$/\1\n/'
