@@ -1,13 +1,5 @@
 puush-linux
 ===========
-
-A Bash script for uploading files to puush.me from Linux. Many thanks to @Westie for his insights on puush's undocumented API :)
-
-Using
------
-
-* Get puush from here: http://b3.blha303.com.au/puush-linux/files/puush
-* Copy 'puush' to /usr/bin.
-* Use it with `puush file.name`. 
-
-You'll need to set up an environment variable, PUUSH_API_KEY. You can do this per-session with `export PUUSH_API_KEY="apiKeyHere"`, or by putting that command in `~/.bashrc`.
+See blha303/puush-linux for original script and guidelines.
+I only forked it to add a single command at the end of the script copying the image url to clipboard using xclip. 
+All credits still go to the original author.
