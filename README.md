@@ -11,3 +11,7 @@ Using
 * Use it with `puush file.name`. 
 
 You'll need to set up an environment variable, PUUSH_API_KEY. You can do this per-session with `export PUUSH_API_KEY="apiKeyHere"`, or by putting that command in `~/.bashrc`.
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/blha303/puush-linux/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
