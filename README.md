@@ -6,7 +6,7 @@ A Bash script for uploading files to puush.me from Linux. Many thanks to @Westie
 Using
 -----
 
-* Get puush from here: http://b3.blha303.com.au/puush-linux/files/puush
+* Get puush from here: https://github.com/blha303/puush-linux/raw/master/puush
 * Copy 'puush' to /usr/bin.
 * Use it with `puush file.name`. 
 
