@@ -29,7 +29,7 @@ puush API documentation
  - Request:
  - - k = apikey
  - - i = file identifier - on puush.me, is SEQUENTIAL
- - Response (success): image, resized
+ - Response (success): image, 100x100 png
  - Response (failure): `-1`
 
 ###Upload
