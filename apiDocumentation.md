@@ -10,10 +10,10 @@ puush API documentation
  - Response (failure): `-1`
 
 ###Deletion
- - URL: `/api/hist`
+ - URL: `/api/del`
  - Request:
  - - k = apikey
- - - i = file identifier - on puush.me, is base10 of file hash
+ - - i = file identifier - on puush.me, is SEQUENTIAL
  - Response (history, success): `{id},{YYYY-MM-DD HH:MM:SS},{url},{filename},{views},{unknown}`
  - Response (failure): `-1`
 
@@ -28,7 +28,7 @@ puush API documentation
  - URL: `/api/thumb`
  - Request:
  - - k = apikey
- - - i = file identifier - on puush.me, is base10 of file hash
+ - - i = file identifier - on puush.me, is SEQUENTIAL
  - Response (success): image, resized
  - Response (failure): `-1`
 
