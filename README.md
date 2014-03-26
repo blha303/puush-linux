@@ -6,12 +6,9 @@ A Bash script for uploading files to puush.me from Linux. Many thanks to @Westie
 Using
 -----
 
+* Get curl if you don't have it already. Most package managers have it as `curl` (apt-get install curl, yum install curl), or check this page: http://curl.haxx.se/download.html
 * Get puush from here: https://github.com/blha303/puush-linux/raw/master/puush
 * Copy 'puush' to /usr/bin.
 * Use it with `puush file.name`. 
 
 You'll need to set up an environment variable, PUUSH_API_KEY. You can do this per-session with `export PUUSH_API_KEY="apiKeyHere"`, or by putting that command in `~/.bashrc`.
-
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/blha303/puush-linux/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
