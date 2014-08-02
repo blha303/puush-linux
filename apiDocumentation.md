@@ -34,9 +34,11 @@ puush API documentation
 
 ###Upload
  - URL: `/api/up`
+ - `Content-Disposition` header needs filename
  - Request:
  - - k = apikey
  - - z = "poop"
  - - f = file
  - Response (upload, success): `0,{url},{id},{size}`
- - Response (failure): `-1`
+ - Response (failure, upload): `-1`
+ - Response (failure, no filename header): `-2`
