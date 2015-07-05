@@ -1,7 +1,9 @@
-#!/bin/sh
+#!/bin/bash
 
-# Uncommend following line if you would like to add api key in this file
-#PUUSH_API_KEY="apikeyhere"
+# Uncomment following line if you would like to add api key in this file
+# PUUSH_API_KEY="apikeyhere"
+# It is recommended that you instead set PUUSH_API_KEY as an environment variable in some startup script, like so:
+# PUUSH_API_KEY="xxxxxxxxxxxxxxxxxxx"; export PUUSH_API_KEY
 
 if [ -z "$PUUSH_API_KEY" ]
 then
@@ -17,4 +19,12 @@ then
   exit 3
 fi
 
-curl "https://puush.me/api/up" -# -F "k=$PUUSH_API_KEY" -F "z=poop" -F "f=@$1" | sed -E 's/^.+,(.+),.+,.+$/\1\n/'
+# If we are supposed to show a link (--showlink), then pop up a dialog with it.
+if [[ $* == *--showlink* ]]
+then
+  curl "https://puush.me/api/up" -# -F "k=$PUUSH_API_KEY" -F "z=poop" -F "f=@$1" | sed -E 's/^.+,(.+),.+,.+$/\1\n/' >> /tmp/puushlink
+  zenity --info --text="`cat /tmp/puushlink`"
+  rm /tmp/puushlink
+else
+  curl "https://puush.me/api/up" -# -F "k=$PUUSH_API_KEY" -F "z=poop" -F "f=@$1" | sed -E 's/^.+,(.+),.+,.+$/\1\n/'
+fi
