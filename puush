@@ -25,7 +25,6 @@ then
   curl "https://puush.me/api/up" -# -F "k=$PUUSH_API_KEY" -F "z=poop" -F "f=@$1" | sed -E 's/^.+,(.+),.+,.+$/\1\n/' >> /tmp/puushlink
   zenity --info --text="`cat /tmp/puushlink`"
   rm /tmp/puushlink
-# Else, upload like normal
 else
   curl "https://puush.me/api/up" -# -F "k=$PUUSH_API_KEY" -F "z=poop" -F "f=@$1" | sed -E 's/^.+,(.+),.+,.+$/\1\n/'
 fi
