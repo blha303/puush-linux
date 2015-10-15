@@ -10,10 +10,13 @@ then
     else
         EXT="txt"
     fi
+    _IFS=$IFS
+    IFS='' # to preserve spacing
     while read p
     do
         echo $p >> /tmp/puush-tmp.$EXT
     done
+    IFS=_IFS
     FN="/tmp/puush-tmp.$EXT"
 else
     FN="$1"
