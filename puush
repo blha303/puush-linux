@@ -1,6 +1,4 @@
-#!/bin/sh
-
-#PUUSH_API_KEY="apikeyhere"
+#!/bin/bash
 
 if [ "$1" = "-" ]
 then
@@ -24,11 +22,14 @@ fi
 
 if [ -z "$PUUSH_API_KEY" ]
 then
-    echo "Set the variable PUUSH_API_KEY in $0 or with 'export PUUSH_API_KEY=\"apiKeyHere\""
+    echo "Please enter your API key:"
+    read PUUSH_API_KEY
+    echo "export PUUSH_API_KEY=$PUUSH_API_KEY" >> ~/.bash_profile
+    echo "Added API key to ~/.bash_profile. Run 'source ~/.bash_profile' to load it, then try again."
     exit 1
 elif [ -z "$FN" ]
 then
-    echo "Specify a file to be uploaded"
+    echo "Specify a file to be uploaded (or use - for stdin)"
     exit 2
 elif ! [ -f "$FN" -a -r "$FN" ]
 then
