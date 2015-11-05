@@ -24,10 +24,9 @@ if [ -z "$PUUSH_API_KEY" ]
 then
     echo "Please enter your API key:"
     read PUUSH_API_KEY
-    echo "export PUUSH_API_KEY=$PUUSH_API_KEY" >> ~/.bash_profile
-    echo "Added API key to ~/.bash_profile. Run 'source ~/.bash_profile' to load it, then try again."
-    exit 1
-elif [ -z "$FN" ]
+    echo "export PUUSH_API_KEY=$PUUSH_API_KEY" >> ~/.bashrc
+    echo "Added API key to ~/.bashrc"
+if [ -z "$FN" ]
 then
     echo "Specify a file to be uploaded (or use - for stdin)"
     exit 2
