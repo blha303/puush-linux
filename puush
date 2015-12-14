@@ -14,7 +14,7 @@ then
     do
         echo $p >> /tmp/puush-tmp.$EXT
     done
-    IFS=_IFS
+    IFS=$_IFS
     FN="/tmp/puush-tmp.$EXT"
 else
     FN="$1"
@@ -26,6 +26,7 @@ then
     read PUUSH_API_KEY
     echo "export PUUSH_API_KEY=$PUUSH_API_KEY" >> ~/.bashrc
     echo "Added API key to ~/.bashrc"
+fi
 if [ -z "$FN" ]
 then
     echo "Specify a file to be uploaded (or use - for stdin)"
