@@ -14,14 +14,14 @@ puush API documentation
  - Request:
  - - k = apikey
  - - i = file identifier - on puush.me, is SEQUENTIAL
- - Response (history, success): `{id},{YYYY-MM-DD HH:MM:SS},{url},{filename},{views},{unknown}`
+ - Response (success): `0`
  - Response (failure): `-1`
 
 ###History
  - URL: `/api/hist`
  - Request:
  - - k = apikey
- - Response (history, success): `{id},{YYYY-MM-DD HH:MM:SS},{url},{filename},{views},{unknown}`
+ - Response (history, success): up to 10 lines of `{id},{YYYY-MM-DD HH:MM:SS},{url},{filename},{views},{unknown}`
  - Response (failure): `-1`
 
 ###Thumbnail
@@ -30,14 +30,14 @@ puush API documentation
  - - k = apikey
  - - i = file identifier - on puush.me, is SEQUENTIAL
  - Response (success): image, 100x100 png
- - Response (failure): `-1`
+ - Response (failure): nothing
 
 ###Upload
  - URL: `/api/up`
  - `Content-Disposition` header needs filename
  - Request:
  - - k = apikey
- - - z = "poop"
+ - - z = anything at all
  - - f = file
  - Response (upload, success): `0,{url},{id},{size}`
  - Response (failure, upload): `-1`
