@@ -40,7 +40,7 @@ puush API documentation
  - `Content-Disposition` header needs filename
  - Request:
     - k = apikey
-    - z = anything at all
+    - z = "poop"
     - f = file
     - c = MD5 hash of file (optional, will only be used if present in the request)
  - Response (upload, success): `0,{url},{id},{size}`
