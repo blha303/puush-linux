@@ -42,6 +42,8 @@ puush API documentation
     - k = apikey
     - z = anything at all
     - f = file
+    - c = MD5 hash of file (optional, will only be used if present in the request)
  - Response (upload, success): `0,{url},{id},{size}`
  - Response (failure, upload): `-1`
  - Response (failure, no filename header): `-2`
+ - Response (failure, hash didn't match): `-3`
