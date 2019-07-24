@@ -37,5 +37,8 @@ then
     exit 3
 fi
 
-curl "https://puush.me/api/up" -# -F "k=$PUUSH_API_KEY" -F "z=poop" -F "f=@$FN" | sed -E 's/^.+,(.+),.+,.+$/\1\n/'
+link=`curl "https://puush.me/api/up" -# -F "k=$PUUSH_API_KEY" -F "z=poop" -F "f=@$FN" | sed -E 's/^.+,(.+),.+,.+$/\1\n/'`
+echo $link
+echo -n $link|xclip -selection clipboard # copies the link to clipboard automatically
+
 rm /tmp/puush-tmp.* 2>/dev/null
